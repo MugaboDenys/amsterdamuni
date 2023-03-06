@@ -48,7 +48,7 @@ const Smallfooter = () => {
             </div>
             <div className="ml-auto flex pt-10 flex-col order-1">
                 <h3 className="text-neutral-300 text-center text-sm">Follow UvA on social media</h3>
-                <div className="flex justify-center pt-5 gap-12">
+                <div className="flex justify-center pt-5 gap-12 px-3">
                         <Link href={'/'}><FaFacebookF className="text-2xl text-neutral-300" /></Link>
                         <Link href={'/'}><FaTwitter className="text-2xl text-neutral-300" /></Link>
                         <Link href={'/'}><FaLinkedin className="text-2xl text-neutral-300" /></Link>
