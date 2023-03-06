@@ -5,10 +5,12 @@ import {BsChevronRight} from "react-icons/bs"
 import {FaFacebookF, FaInstagram, FaLinkedin, FaTwitter, FaWhatsapp, FaYoutube} from "react-icons/fa"
 import Link from "next/link";
 import FooterCol from "../ui/FooterCol";
+import Smallfooter from "./SmallFooter";
 
 const Footer = () => {
     return ( 
-            <div className="py-10 bg-black2">
+            <div>
+                <div className="py-10 hidden md:block bg-black2">
                 <Wrapper className={"bg-black2 md:py-10 text-white border-b"}>
                         <Image alt="" src={logo} className="w-auto md:h-7 h-10 "/>
                         <div className="pt-5">
@@ -68,7 +70,7 @@ const Footer = () => {
                 </Wrapper>
                 <Wrapper>
                     <div className="pt-10 flex md:flex-row flex-col">
-                        <div className="flex flex-col md:order-1 order-2 items-center gap-x-3 text-neutral-300">
+                        <div className="flex flex-col md:flex-row md:order-1 order-2 items-center gap-x-3 text-neutral-300">
                             <h3 className="text-sm">Copyright UvA 2023</h3>
                             {[
                                 "About the site",
@@ -76,20 +78,21 @@ const Footer = () => {
                                 "Cookie settings"
                             ].map(item=> <Link href={'/'} key={item} className="text-sm hover:text-white" >{item}</Link>)}
                         </div>
-                        <div className="ml-auto flex md:flex-row flex-col order-1 items-end">
+                        <div className="ml-auto flex md:flex-row flex-col order-1 items-center">
                             <h3 className="text-neutral-300 text-sm">Follow UvA on social media</h3>
                             <div className="flex gap-3">
-                                {[  <FaFacebookF/>,
-                                    <FaTwitter/>,
-                                    <FaLinkedin/>,
-                                    <FaInstagram/>,
-                                    <FaWhatsapp/>,
-                                    <FaYoutube/>
-                                ].map(item=> <Link href={'/'} key={item} className="text-2xl text-neutral-300" >{item} </Link>)}
+                                 <Link href={'/'}><FaFacebookF className="text-2xl text-neutral-300" />,</Link>
+                                 <Link href={'/'}><FaTwitter className="text-2xl text-neutral-300" />,</Link>
+                                 <Link href={'/'}><FaLinkedin className="text-2xl text-neutral-300" />,</Link>
+                                 <Link href={'/'}><FaInstagram className="text-2xl text-neutral-300" />,</Link>
+                                 <Link href={'/'}><FaWhatsapp className="text-2xl text-neutral-300" />,</Link>
+                                 <Link href={'/'}><FaYoutube className="text-2xl text-neutral-300" />,</Link>
                             </div>
                         </div>
                     </div>
                 </Wrapper>
+            </div>
+            <Smallfooter/>
             </div>
      );
 }

@@ -1,17 +1,42 @@
 import Wrapper from "./Wrapper";
 import logo1 from "../../public/assets/logo1.png"
 import logo2 from "../../public/assets/logo2.png"
+import arrow from "../../public/assets/arrow.svg"
 import Image from "next/image";
 import Link from "next/link";
 import {IoIosMenu, IoIosSearch} from "react-icons/io"
-import {AiOutlineHeart} from "react-icons/ai"
+import {AiFillRightSquare, AiOutlineHeart} from "react-icons/ai"
+import { useEffect, useState } from "react";
+import { BsChevronRight } from "react-icons/bs";
 
 const Navbar = () => {
+    const [show, setShow] = useState(false);
+    useEffect(() => {
+        document.body.style.overflow = show ? "hidden" : "auto";
+        return () => (document.body.style.overflow = "scroll");
+      });
+
+    const [animateHeader, setAnimateHeader] = useState(false);
+    
+    useEffect(() => {
+        const listener = () => {
+          if (window.scrollY > 150) {
+            setAnimateHeader(true);
+          } else setAnimateHeader(false);
+        };
+    
+        window.addEventListener("scroll", listener);
+        return () => {
+          window.removeEventListener("scroll", listener);
+        };
+      }, []);
     return ( 
-        <Wrapper className={"shadow-5xl"}>
-            <div className="py-5 hidden  md:flex ">
+        
+        <div className="bg-white relative">
+            <div className={`${animateHeader ? "py-2":"py-5"} duration-500 hidden  md:flex fixed shadow-mini w-[1600px] mx-auto md:px-28 px-3 bg-white z-50 `}>
                 <Link href={'/'}>
-                    <Image alt="" src={logo1} className="hidden md:block h-10 w-auto" />
+                    {animateHeader ? <Image alt="" src={logo2} className="hidden md:block h-14 w-auto" />
+                    : <Image alt="" src={logo1} className="hidden md:block h-10 w-auto" />}
                     
                 </Link>
                 <div className="ml-auto hidden md:flex items-center gap-x-5">
@@ -28,16 +53,38 @@ const Navbar = () => {
                     </Link>
                 </div>
             </div>
-            <div className="flex py-3">
+            <div className="flex md:hidden py-3 px-3 shadow-small bg-white fixed w-full z-50">
                 <Image alt="" src={logo2} className="block md:hidden h-14 w-auto" />
                 <div className="ml-auto flex gap-3 items-center">
                     <AiOutlineHeart className="text-4xl text-[#6c1616]"/>
-                    <span className="border rounded border-black px-2 py-2 focus:shadow-5xl cursor-pointer "><IoIosSearch className="text-3xl text-neutral-700" /></span>
+                    <span className="border rounded border-black p-2 focus:shadow-5xl cursor-pointer "><IoIosSearch className="text-3xl text-neutral-700" /></span>
                     <span className="border rounded border-black px-3 py-2 focus:shadow-5xl cursor-pointer "><h2 className="text-xl">NL</h2></span>
-                    <span className="border rounded bg-black2 border-black px-2 py-2 focus:shadow-5xl cursor-pointer "><IoIosMenu className="text-3xl text-white" /></span>
+                    <span onClick={() => setShow(!show)} className="border rounded bg-black2 border-black p-2 focus:shadow-5xl cursor-pointer "><IoIosMenu className="text-3xl text-white" /></span>
                 </div>
             </div>
-        </Wrapper>
+            {show && (
+            <div className="absolute left-0 top-20 z-50  w-full  bg-neutral-300 py-5 text-[#1f1d21]">
+              <span className="text-[#bc0031] flex items-center ml-16 text-sm">
+                <Image src={arrow} alt="" />
+                <h2>Home</h2>
+              </span>
+              <div className="grid grid-cols-1 font-normal mt-3  gap-2 ">
+                {["education", "research", "news", "about", "library"].map(
+                  (item, index) => {
+                    return (
+                      <Link href={item} key={index} className="border-t group flex items-center gap-1 border-t-white text-[16px] leading-[25px] ">
+                            <span className="h-full px-2 py-2 bg-white">
+                                <BsChevronRight className="bg-white text-black" />
+                            </span>
+                        <h3 className="group-hover:text-[#bc0031] hover:underline-offset-4 hover:underline">{item}</h3>
+                      </Link>
+                    );
+                  }
+                )}
+              </div>
+            </div>
+          )}
+        </div>
      );
 }
  

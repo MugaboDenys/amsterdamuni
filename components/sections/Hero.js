@@ -21,12 +21,12 @@ const Hero = () => {
     ]
     return ( 
         <Wrapper>
-            <div className="flex flex-col md:flex-row md:pt-20 pt-8 relative">
+            <div className="flex flex-col md:flex-row md:pt-20 top-28 relative">
                 <div className="md:w-1/2 font-serif md:pl-24  md:pt-20">
                     <h2 className="text-4xl font-bold leading-relaxed">University of Amsterdam</h2>
-                    <h3 className="text-3xl leading-relaxed"> Inspiring generations since 1632. </h3>
+                    <h3 className="md:text-3xl text-[1.7rem] leading-relaxed"> Inspiring generations since 1632. </h3>
                 </div>
-                <div className="relative md:h-[40rem] h-[30rem] md:mr-10 md:w-1/2 pt-10 md:pt-0 ">
+                <div className="relative md:h-[40rem] h-[40rem] md:mr-10 md:w-1/2 pt-10 md:pt-0 ">
                     <div className="w-[40rem] h-[28rem] bg-neutral-300 hidden md:absolute top-28 -right-10 opacity-20 -z-10 ">
                         
                     </div>
@@ -35,7 +35,7 @@ const Hero = () => {
                     </div>
 
                 </div>
-                <div className="absolute w-full md:bottom-52 -bottom-[6rem] md:left-24 flex flex-col items-center md:flex-row gap-3">
+                <div className="absolute w-full md:bottom-52 bottom-[1.5rem] md:left-24 flex flex-col items-center md:flex-row gap-3">
                     {data.map(item=>
                             <Card1 key={item} title={item.title} desc={item.desc} />
                         )}
