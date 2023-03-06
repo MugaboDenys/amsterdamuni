@@ -15,7 +15,8 @@ module.exports = {
         "6xl" : "-53px 0px 17px 4px rgba(251,251,251,0.4) inset"
       },
       colors : {
-        gray1 : "#e6e6e6"
+        gray1 : "#e6e6e6",
+        black2 : "#1f1d20"
       }
     },
   },

@@ -8,6 +8,7 @@ import Header from '@/components/layout/Header'
 import Current from '@/components/sections/Current'
 import News from '@/components/sections/News'
 import Goto from '@/components/sections/Goto'
+import Footer from '@/components/layout/Footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function Home() {
         <Current/>
         <News/>
         <Goto/>
+        <Footer/>
       </main>
     </>
   )
