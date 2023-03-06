@@ -9,10 +9,10 @@ import FooterCol from "../ui/FooterCol";
 const Footer = () => {
     return ( 
             <div className="py-10 bg-black2">
-                <Wrapper className={"bg-black2 py-10 text-white border-b"}>
-                        <Image alt="" src={logo} className="w-auto h-7 "/>
+                <Wrapper className={"bg-black2 md:py-10 text-white border-b"}>
+                        <Image alt="" src={logo} className="w-auto md:h-7 h-10 "/>
                         <div className="pt-5">
-                            <div className="pt-2 grid grid-cols-4">
+                            <div className="pt-2 grid md:grid-cols-4 grid-cols-1">
                                 <FooterCol 
                                 title={"Education & research"}
                                 link={[
@@ -67,8 +67,8 @@ const Footer = () => {
                         </div>
                 </Wrapper>
                 <Wrapper>
-                    <div className="pt-10 flex">
-                        <div className="flex items-center gap-x-3 text-neutral-300">
+                    <div className="pt-10 flex md:flex-row flex-col">
+                        <div className="flex flex-col md:order-1 order-2 items-center gap-x-3 text-neutral-300">
                             <h3 className="text-sm">Copyright UvA 2023</h3>
                             {[
                                 "About the site",
@@ -76,7 +76,7 @@ const Footer = () => {
                                 "Cookie settings"
                             ].map(item=> <Link href={'/'} key={item} className="text-sm hover:text-white" >{item}</Link>)}
                         </div>
-                        <div className="ml-auto flex items-end">
+                        <div className="ml-auto flex md:flex-row flex-col order-1 items-end">
                             <h3 className="text-neutral-300 text-sm">Follow UvA on social media</h3>
                             <div className="flex gap-3">
                                 {[  <FaFacebookF/>,

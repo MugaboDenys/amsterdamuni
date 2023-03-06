@@ -3,7 +3,7 @@ import Wrapper from "./Wrapper";
 
 const Nav = () => {
     return ( 
-       <Wrapper className={"bg-neutral-200 shadow-5xl"}>
+       <Wrapper className={"bg-neutral-200 hidden md:block shadow-5xl"}>
             <div className="py-3">
                 <ul className="flex gap-5">
                 {[  "Education",

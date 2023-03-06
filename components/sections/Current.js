@@ -24,10 +24,12 @@ const Current = () => {
     ]
     return ( 
         <Wrapper className={"py-20"}>
-            <div className="flex gap-10">
+            <h2 className="text-3xl py-10 font-serif font-bold">Current</h2>
+            <div className="flex md:flex-row flex-col gap-10">
+                
                 {data.map(item=>
                     
-                    <Card2 className={"w-[445px]"} key={item} title={item.title} img={item.image} paragraph={item.paragraph}/>
+                    <Card2 className={"md:w-[445px]"} key={item} title={item.title} img={item.image} paragraph={item.paragraph}/>
                 )}
             </div>
         </Wrapper>

@@ -40,10 +40,10 @@ const News = () => {
         <Wrapper className={'bg-gray1 overflow-hidden'}>
             <div className="py-20">
                 <div className="flex justify-between ">
-                    <h2 className="text-2xl font-serif">News</h2>
+                    <h2 className="md:text-2xl text-3xl font-serif">News</h2>
                     <Link href={'/'} className="text-2xl text-neutral-400" >{">"}</Link>
                 </div>
-                <div className=" ml-6 pt-10 w-[1400px] flex flex-nowrap overflow-x-visible gap-5">
+                <div className=" md:ml-6 pt-10 w-[1400px] flex flex-nowrap overflow-x-visible gap-5">
                     {data.map(item=>
                         
                         <Card2 className={"min-w-[328px] bg-white"} key={item} title={item.title} img={item.image} paragraph={item.paragraph}/>

@@ -21,21 +21,21 @@ const Hero = () => {
     ]
     return ( 
         <Wrapper>
-            <div className="flex pt-20 relative">
-                <div className="w-1/2 font-serif pl-24 pt-20">
-                    <h2 className="text-4xl font-bold">University of Amsterdam</h2>
-                    <h3 className="text-3xl"> Inspiring generations since 1632. </h3>
+            <div className="flex flex-col md:flex-row md:pt-20 pt-8 relative">
+                <div className="md:w-1/2 font-serif md:pl-24  md:pt-20">
+                    <h2 className="text-4xl font-bold leading-relaxed">University of Amsterdam</h2>
+                    <h3 className="text-3xl leading-relaxed"> Inspiring generations since 1632. </h3>
                 </div>
-                <div className="relative h-[40rem] mr-10 w-1/2 ">
-                    <div className="w-[40rem] h-[28rem] bg-neutral-300 absolute top-28 -right-10 opacity-20 -z-10 ">
+                <div className="relative md:h-[40rem] h-[30rem] md:mr-10 md:w-1/2 pt-10 md:pt-0 ">
+                    <div className="w-[40rem] h-[28rem] bg-neutral-300 hidden md:absolute top-28 -right-10 opacity-20 -z-10 ">
                         
                     </div>
-                    <div className="w-[40rem] ">
+                    <div className="md:w-[40rem] w-full ">
                         <Image alt="" src={img1} className="" />
                     </div>
 
                 </div>
-                <div className="absolute bottom-52 left-24 flex gap-3">
+                <div className="absolute w-full md:bottom-52 -bottom-[6rem] md:left-24 flex flex-col items-center md:flex-row gap-3">
                     {data.map(item=>
                             <Card1 key={item} title={item.title} desc={item.desc} />
                         )}
