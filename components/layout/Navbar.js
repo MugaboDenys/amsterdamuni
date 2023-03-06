@@ -5,7 +5,7 @@ import arrow from "../../public/assets/arrow.svg"
 import Image from "next/image";
 import Link from "next/link";
 import {IoIosMenu, IoIosSearch} from "react-icons/io"
-import {AiFillRightSquare, AiOutlineHeart} from "react-icons/ai"
+import {AiFillRightSquare, AiOutlineClose, AiOutlineHeart} from "react-icons/ai"
 import { useEffect, useState } from "react";
 import { BsChevronRight } from "react-icons/bs";
 
@@ -59,7 +59,7 @@ const Navbar = () => {
                     <AiOutlineHeart className="text-4xl text-[#6c1616]"/>
                     <span className="border rounded border-black p-2 focus:shadow-5xl cursor-pointer "><IoIosSearch className="text-3xl text-neutral-700" /></span>
                     <span className="border rounded border-black px-3 py-2 focus:shadow-5xl cursor-pointer "><h2 className="text-xl">NL</h2></span>
-                    <span onClick={() => setShow(!show)} className="border rounded bg-black2 border-black p-2 focus:shadow-5xl cursor-pointer "><IoIosMenu className="text-3xl text-white" /></span>
+                    <span onClick={() => setShow(!show)} className="border rounded bg-black2 border-black p-2 focus:shadow-5xl cursor-pointer duration-500 ">{show ? <AiOutlineClose className="text-3xl duration-500 text-white" /> :<IoIosMenu className="text-3xl duration-500 text-white" />}</span>
                 </div>
             </div>
             {show && (
