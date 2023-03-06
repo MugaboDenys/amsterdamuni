@@ -63,7 +63,7 @@ const Navbar = () => {
                 </div>
             </div>
             {show && (
-            <div className="absolute left-0 top-20 z-50  w-full  bg-neutral-300 py-5 text-[#1f1d21]">
+            <div className="fixed left-0 top-20 z-50  w-full  bg-neutral-300 py-5 text-[#1f1d21]">
               <span className="text-[#bc0031] flex items-center ml-16 text-sm">
                 <Image src={arrow} alt="" />
                 <h2>Home</h2>

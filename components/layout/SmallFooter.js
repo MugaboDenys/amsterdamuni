@@ -13,7 +13,7 @@ const Smallfooter = () => {
                 {["Education & research","Go to", "Information for","Contact"].map((item,index)=>{
                     return(
                         <details href={'/'} key={index} className="cursor-pointer text-white pr-3 text-sm border-neutral-500 border-t py-4 ">
-                            <summary className="flex items-center justify-between">
+                            <summary className="flex items-center justify-between" aria-hidden={true}>
                                 <h2 className="font-medium">{item}</h2>
                                 <BsChevronDown />
                             </summary>
